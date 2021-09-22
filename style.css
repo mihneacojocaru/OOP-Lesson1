@@ -37,7 +37,7 @@ main .card{
     flex-direction: column;
     max-width: 210px;
     padding: 0 0 30px;
-
+    margin: 5px;
 }
 
 .img{
