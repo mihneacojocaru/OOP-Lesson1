@@ -1,6 +1,6 @@
 
 
-import Masina from "./masina.js";
+import Masina from "../model/masina.js";
 
 
 

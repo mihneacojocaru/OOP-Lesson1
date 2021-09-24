@@ -35,6 +35,10 @@ class Masina {
                             <span>*</span>
                             <span>${this.status}</span>
                         </div>
+                        <div class="page-buttons">
+                        <button>Edit</button>    
+                        <button>Delete</button>
+                        </div>
                      </div>`;
         return card;
     }

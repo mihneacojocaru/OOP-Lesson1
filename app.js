@@ -1,18 +1,35 @@
 
-
-import Masina from "./masina.js";
-
-import ControllMasina from "./controlMasina.js";
+// import ControllMasina from "./controller/controlMasina.js";
 
 
-let masina = new Masina(1,"Dacia","Logan","benzin", 2010, "disponibil");
-
-console.log(masina.toCard());
+// let x = new ControllMasina();
 
 
-let test = new ControllMasina();
+// x.updateCombustibil("Volkswagen","Passat","hidrogen");
 
-test.createHTML();
+// x.updateAnFabricatie("Volkswagen", "Passat", "2030");
+
+// x.updateStatus("Volkswagen","Passat","indisponibil");
+
+
+// //x.afisare();
+
+
+// x.save();
+
+// x.deleteElement(1);
+
+
+import ViewHome from "./view/viewHome.js";
+
+
+
+let home = new ViewHome();
+
+
+
+
+
 
 
 
