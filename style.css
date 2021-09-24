@@ -14,13 +14,12 @@ html, body{
 header{
     height: 150px;
     text-align: center;
-    background-color: rgb(255, 199, 198);
+    background-color: #ededed;
 
 }
 
 header h1{
     padding-top: 50px;
-    color: rgb(29, 58, 143);
 }
 
 main{
@@ -46,7 +45,7 @@ main .card{
 .img{
     height: 150px;
     width: 250px;
-    background-color: rgb(29, 58, 143);
+    background-color: #0099cc;
     border-radius: 5px 5px 0 0;
 }
 
