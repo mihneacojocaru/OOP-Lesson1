@@ -25,6 +25,9 @@ header h1{
 
 main{
     padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 main .card{

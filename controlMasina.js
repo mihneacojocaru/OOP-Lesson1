@@ -45,7 +45,26 @@ class ControllMasina{
 
     }
 
-
+    createHTML = () => {
+        let container = document.getElementById("main");
+        container.innerHTML = "";
+        this.list.forEach( el => {
+            let card = `
+            <div class="card">
+                <div class="img"></div>
+                <h3>${el.marca} ${el.model}</h3>
+                <div class="car-info">
+                    <span>${el.combustibil}</span>
+                    <span>*</span>
+                    <span>${el.an}</span>
+                    <span>*</span>
+                    <span>${el.status}</span>
+                </div>
+            </div>
+            `;
+        container.innerHTML += card;
+        })
+    }
 
 
 
