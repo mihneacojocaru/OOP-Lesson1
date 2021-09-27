@@ -70,7 +70,6 @@ class ViewHome{
 
         let obj=e.target.parentNode;
 
-        
 
     }
     
