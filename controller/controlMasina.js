@@ -5,11 +5,15 @@ import Masina from "../model/masina.js";
 class ControllMasina{
 
 
+
     constructor(){
 
         this.list=[];
 
         this.read();
+
+        
+
     }
 
 
@@ -17,20 +21,17 @@ class ControllMasina{
 
     read=()=>{
 
-        let i=1;
+        this.list=[];
+        for(let i=0; i<localStorage.length; i++){
 
-        while(localStorage.getItem(i)){
-
-
-            let ob=localStorage.getItem(i);
-
-
-           ob=JSON.parse(ob);
-
-
-           this.list.push(new Masina(ob.id, ob.marca, ob.model, ob.combustibil, ob.an, ob.status));
-
-           i++;
+            let obj = localStorage.getItem(localStorage.key(i));
+            obj=JSON.parse(obj);
+    
+              if(obj.id.includes("c")){
+                let masina = new Masina(obj.id,obj.marca,obj.model,obj.combustibil,obj.an,obj.status);
+                this.list.push(masina);
+            
+              }
         }
 
 
@@ -82,28 +83,46 @@ class ControllMasina{
 
     deleteElement(id){
 
-        let x=this.list.filter(e=>e.id!=id);
+        // let x=this.list.filter(e=>e.id!=id);
 
-        this.list.clear;
+        // this.list.clear;
 
-        this.list=[...x];
+        // this.list=[...x];
+
+        localStorage.removeItem(id);
+
+
                     
     }
 
-    save=()=>{
+    getIdFromName(marca, model){
+
+        let currentId = '';
+
+        this.list.forEach( e => {
+            if(e.marca == marca && e.model == model){
+                currentId = e.id;
+            }
+        })
+
+        return currentId;
+    }
+
+    // save=()=>{
 
 
-        localStorage.clear();
+    //     localStorage.clear();
 
         
        
-        this.list.forEach(e=>{
+    //     this.list.forEach(e=>{
 
-            localStorage
-            .setItem(e.id,JSON.stringify(e));
-        })
+    //         localStorage
+    //         .setItem(e.id,JSON.stringify(e));
+    //     })
 
-    }
+    // }
+
 
 
 }

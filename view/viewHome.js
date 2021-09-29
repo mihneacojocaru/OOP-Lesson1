@@ -25,6 +25,10 @@ class ViewHome{
 
         this.setMain();
 
+        //this.container.addEventListener("click",this.deleteHandler);
+
+        this.container.addEventListener("click",this.editHandler);
+
         //header
 
         //main 
@@ -57,16 +61,56 @@ class ViewHome{
 
 
 
-    editHandler=()=>{
+    editHandler=(e)=>{
 
+        e.preventDefault();
+        let obj = e.target;
 
+        if(obj.tagName == "BUTTON" && obj.classList.contains("edit")){
+            
+            let x = obj.parentNode.parentNode.children[1].textContent;
+
+            let y = obj.parentNode.parentNode;
+
+            let input = document.createElement('input');
+            input.type = "text";
+            input.value = x;
+
+            y.insertBefore(input, y.children[1]);
+
+            console.log(y);
+ 
+
+        }
+
+        
+        
 
     }
 
     deleteHandler=(e)=>{
 
 
-        let obj=e.target.parentNode;
+       e.preventDefault();
+        let obj = e.target;
+
+        if(obj.tagName=="BUTTON"&&obj.classList.contains("delete")){
+
+            let textArray = obj.parentNode.parentNode.children[1].textContent.split(' ');
+
+            let marca = textArray[0];
+            let model = textArray[1];
+            let currentId = this.controllMasini.getIdFromName(marca,model);
+            this.controllMasini.deleteElement(currentId);
+
+            this.controllMasini.read();
+
+
+            this.setMain();
+        }
+
+
+
 
 
     }

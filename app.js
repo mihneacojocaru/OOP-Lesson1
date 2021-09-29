@@ -1,5 +1,5 @@
 
-// import ControllMasina from "./controller/controlMasina.js";
+import ControllMasina from "./controller/controlMasina.js";
 
 
 // let x = new ControllMasina();
@@ -23,8 +23,12 @@
 import ViewHome from "./view/viewHome.js";
 
 
-
 let home = new ViewHome();
+
+
+
+
+
 
 
 
