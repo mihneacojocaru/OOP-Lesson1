@@ -49,8 +49,6 @@ class ViewHome{
         let text="";
 
         this.controllMasini.list.forEach(e=>{
-
-
              text+=e.toCard();
         });
         
