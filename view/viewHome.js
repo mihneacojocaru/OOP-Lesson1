@@ -107,15 +107,9 @@ class ViewHome{
                 alert("Input value cannot be null!");
             }
 
-            
-
-
-
         }
 
-        
-        
-
+    
     }
 
     deleteHandler=(e)=>{
