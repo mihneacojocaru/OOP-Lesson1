@@ -25,7 +25,7 @@ class ViewHome{
 
         this.setMain();
 
-        //this.container.addEventListener("click",this.deleteHandler);
+        // this.container.addEventListener("click",this.deleteHandler);
 
         this.container.addEventListener("click",this.editHandler);
 
@@ -68,18 +68,48 @@ class ViewHome{
 
         if(obj.tagName == "BUTTON" && obj.classList.contains("edit")){
             
-            let x = obj.parentNode.parentNode.children[1].textContent;
+            let cardObj = obj.parentNode.parentNode;
+            let makeModel = cardObj.children[1].textContent;
 
-            let y = obj.parentNode.parentNode;
+            // console.log(cardObj);
 
             let input = document.createElement('input');
             input.type = "text";
-            input.value = x;
+            input.value = makeModel;
+            input.id = "nameInput";
 
-            y.insertBefore(input, y.children[1]);
+            cardObj.insertBefore(input, cardObj.children[1]);
 
-            console.log(y);
- 
+            cardObj.removeChild(cardObj.children[2]);
+
+            let editBtn = document.querySelector('.edit');
+            editBtn.textContent = "Save";
+            editBtn.className = "save";
+
+        } else if(obj.classList.contains("save")){
+            
+            let input = document.getElementById('nameInput');
+
+            let h3 = document.createElement('h3');
+
+            if(input.value != ""){
+                h3.textContent = input.value;
+
+            let card = obj.parentNode.parentNode;
+
+            card.insertBefore(h3, card.children[1]);
+            card.removeChild(card.children[2]);
+
+            let saveBtn = document.querySelector('.save');
+            saveBtn.textContent = "Edit";
+            saveBtn.className = "edit";
+            } else{
+                alert("Input value cannot be null!");
+            }
+
+            
+
+
 
         }
 
