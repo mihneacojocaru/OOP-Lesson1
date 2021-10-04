@@ -82,7 +82,10 @@ class ViewHome{
 
             cardObj.removeChild(cardObj.children[2]);
 
-            let editBtn = document.querySelector('.edit');
+            //cardObj.children --> anstatt querySelector
+
+            let editBtn = cardObj.children[3].children[0];
+
             editBtn.textContent = "Save";
             editBtn.className = "save";
 
