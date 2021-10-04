@@ -25,7 +25,7 @@ class ViewHome{
 
         this.setMain();
 
-        // this.container.addEventListener("click",this.deleteHandler);
+        this.container.addEventListener("click",this.deleteHandler);
 
         this.container.addEventListener("click",this.editHandler);
 
@@ -98,14 +98,14 @@ class ViewHome{
             if(input.value != ""){
                 h3.textContent = input.value;
 
-            let card = obj.parentNode.parentNode;
+                let card = obj.parentNode.parentNode;
 
-            card.insertBefore(h3, card.children[1]);
-            card.removeChild(card.children[2]);
+                card.insertBefore(h3, card.children[1]);
+                card.removeChild(card.children[2]);
 
-            let saveBtn = document.querySelector('.save');
-            saveBtn.textContent = "Edit";
-            saveBtn.className = "edit";
+                let saveBtn = document.querySelector('.save');
+                saveBtn.textContent = "Edit";
+                saveBtn.className = "edit";
             } else{
                 alert("Input value cannot be null!");
             }
