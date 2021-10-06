@@ -8,7 +8,7 @@ class ViewHome{
     constructor(){
 
         
-        this.controllMasini= new ControllMasina();
+        this.controllMasina= new ControllMasina();
 
         this.container=document.querySelector(".container");
 
@@ -52,7 +52,7 @@ class ViewHome{
 
         let text="";
 
-        this.controllMasini.list.forEach(e=>{
+        this.controllMasina.list.forEach(e=>{
              text+=e.toCard();
         });
         
@@ -63,6 +63,7 @@ class ViewHome{
 
     editHandler=(e)=>{
 
+        let carId = "c5";
         e.preventDefault();
         let obj = e.target;
 
@@ -71,8 +72,11 @@ class ViewHome{
             let cardObj = obj.parentNode.parentNode;
             let makeModel = cardObj.children[1].textContent;
 
-            // console.log(cardObj);
+            const splitString = makeModel.split(" ");
 
+            carId = this.controllMasina.getIdFromName(splitString[0],splitString[1]);
+            console.log(carId);
+            
             let input = document.createElement('input');
             input.type = "text";
             input.value = makeModel;
@@ -97,6 +101,11 @@ class ViewHome{
 
             if(input.value != ""){
                 h3.textContent = input.value;
+
+                let newName = input.value.split(" ");
+
+                this.controllMasina.updateNume(newName[0],newName[1],carId);
+
 
                 let card = obj.parentNode.parentNode;
 
@@ -127,10 +136,10 @@ class ViewHome{
 
             let marca = textArray[0];
             let model = textArray[1];
-            let currentId = this.controllMasini.getIdFromName(marca,model);
-            this.controllMasini.deleteElement(currentId);
+            let currentId = this.controllMasina.getIdFromName(marca,model);
+            this.controllMasina.deleteElement(currentId);
 
-            this.controllMasini.read();
+            this.controllMasina.read();
 
 
             this.setMain();

@@ -63,6 +63,23 @@ class ControllMasina{
 
     }
 
+    updateNume(marca,model,id){
+
+        this.list.forEach( e => {
+
+            if(e.id == id){
+                e.marca = marca;
+                e.model = model;
+            }
+            
+
+        });
+
+        console.log(this.list);
+
+
+    }
+
     updateAnFabricatie(marca,model,an){
 
         this.list.forEach( e => {
