@@ -38,3 +38,18 @@ localStorage.setItem(x8.id,JSON.stringify(x8));
 localStorage.setItem(x9.id,JSON.stringify(x9));
 localStorage.setItem(x10.id,JSON.stringify(x10));
 
+// updateNume(marca,model,id){
+
+    //     this.list.forEach( e => {
+
+    //         if(e.id == id){
+    //             e.marca = marca;
+    //             e.model = model;
+    //         }
+            
+    //     });
+
+    //     console.log(this.list);
+
+
+    // }

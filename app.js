@@ -37,5 +37,3 @@ let home = new ViewHome();
 
 
 
-
-

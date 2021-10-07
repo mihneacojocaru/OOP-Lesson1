@@ -48,37 +48,33 @@ class ControllMasina{
 
     }
 
-    //
+    updateCombustibil(id,combustibil){
 
+        let obj = localStorage.getItem(id);
 
-    updateCombustibil(marca,model,combustibil){
+        obj = JSON.parse(obj);
 
-        this.list.forEach(e=>{
+        obj.combustibil=combustibil;
 
-            if(e.marca == marca && e.model == model){
-                e.combustibil = combustibil;
-            }
+        localStorage.setItem(id,JSON.stringify(obj));
 
-        });
+        this.read();
 
     }
 
     updateNume(marca,model,id){
 
-        this.list.forEach( e => {
+        let obj = localStorage.getItem(id);
+        
+        obj = JSON.parse(obj);
 
-            if(e.id == id){
-                e.marca = marca;
-                e.model = model;
-            }
-            
-
-        });
-
-        console.log(this.list);
-
+        obj.marca=marca;
+        obj.model=model;
+      
+        localStorage.setItem(id,JSON.stringify(obj));
 
     }
+
 
     updateAnFabricatie(marca,model,an){
 
@@ -107,9 +103,7 @@ class ControllMasina{
         // this.list=[...x];
 
         localStorage.removeItem(id);
-
-
-                    
+          
     }
 
     getIdFromName(marca, model){
