@@ -1,6 +1,7 @@
 
 
 import Masina from "../model/masina.js";
+import ViewHome from "../view/viewHome.js";
 
 class ControllMasina{
 
@@ -11,8 +12,6 @@ class ControllMasina{
         this.list=[];
 
         this.read();
-
-        
 
     }
 
@@ -25,12 +24,12 @@ class ControllMasina{
         for(let i=0; i<localStorage.length; i++){
 
             let obj = localStorage.getItem(localStorage.key(i));
+            
             obj=JSON.parse(obj);
     
               if(obj.id.includes("c")){
                 let masina = new Masina(obj.id,obj.marca,obj.model,obj.combustibil,obj.an,obj.status);
                 this.list.push(masina);
-            
               }
         }
 
@@ -60,6 +59,9 @@ class ControllMasina{
 
         this.read();
 
+        let viewHome = new ViewHome();
+        viewHome.loadPage();
+
     }
 
     updateNume(marca,model,id){
@@ -72,6 +74,7 @@ class ControllMasina{
         obj.model=model;
       
         localStorage.setItem(id,JSON.stringify(obj));
+
 
     }
 

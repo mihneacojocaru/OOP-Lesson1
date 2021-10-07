@@ -1,5 +1,6 @@
 
 import ControllMasina from "./controller/controlMasina.js";
+import ViewHome from "./view/viewHome.js";
 
 
 // let x = new ControllMasina();
@@ -19,11 +20,12 @@ import ControllMasina from "./controller/controlMasina.js";
 
 // x.deleteElement(1);
 
-
-import ViewHome from "./view/viewHome.js";
-
-
 let home = new ViewHome();
+
+let controll = new ControllMasina();
+
+
+
 
 
 

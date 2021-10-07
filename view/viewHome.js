@@ -13,6 +13,8 @@ class ViewHome{
 
         this.container=document.querySelector(".container");
 
+        this.container.innerHTML = "";
+
         this.header=document.createElement('header');
 
         this.container.appendChild(this.header);
@@ -38,6 +40,25 @@ class ViewHome{
     }
 
 
+    loadPage(){
+        this.container=document.querySelector(".container");
+
+        this.container.innerHTML = "";
+
+        this.header=document.createElement('header');
+
+        this.container.appendChild(this.header);
+
+        this.setHeader();
+
+        this.main = document.createElement('main');
+
+        this.container.appendChild(this.main);
+
+        this.setMain();
+    }
+
+
     setHeader = () => {
         let h1 = document.createElement('h1');
         h1.textContent = "Parc Auto";
@@ -47,7 +68,6 @@ class ViewHome{
 
 
     setMain=()=>{
-        
 
         let text="";
 
@@ -99,6 +119,8 @@ class ViewHome{
 
                 let newName = input.value.split(" ");
 
+                console.log(newName);
+
                 this.controllMasina.updateNume(newName[0],newName[1],this.carId);
 
                 let card = obj.parentNode.parentNode;
@@ -126,7 +148,6 @@ class ViewHome{
         } else if(obj.classList.contains("save")){
             
             this.onSaveClick(obj);
-
         }
 
     
